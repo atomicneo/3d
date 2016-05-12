@@ -1,0 +1,38 @@
+<!--code by Neo -->
+<!DOCTYPE html>
+<html> 
+<head>
+<title>新建网页</title>
+<meta charset="utf-8"/>
+<style>
+*{ margin:0; padding:0; }
+.div{ width:200px; height:200px; position:relative; margin:100px auto;  }
+.box{ width:200px; height:200px; background:url(img/img_01.jpg) no-repeat; position:absolute; top:0; left:0; z-index:4; -webkit-transition:1s all ease; }
+.cd{ width:194px; height:194px; background:url(img/cd.png) no-repeat; position:absolute; top:3px; left:3px; -webkit-transition:1s all ease; }
+
+
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.querySelector('.div');
+	var oBox=document.querySelector('.box');
+	var oCd=document.querySelector('.cd');
+
+	oDiv.onmousemove=function(){
+		oBox.style.WebkitTransform='translate(0,20px)';
+		oCd.style.WebkitTransform='translate(0,-20px) rotate(360deg)';
+	};
+	oDiv.onmouseout=function(){
+		oBox.style.WebkitTransform='translate(0,0)';
+		oCd.style.WebkitTransform='translate(0,0) rotate(-360deg)';
+	};
+};
+</script>
+</head>
+<body>
+	<div class="div">
+		<div class="box"></div>
+		<div class="cd"></div>
+	</div>
+</body>
+</html>
